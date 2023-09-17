@@ -51,7 +51,7 @@ ssh {username}@{address}
 ![Вход по ssh]()
 Вводим пароль для входа в систему
 
-![Вид на терминал на удаленном комьютере]()
+![Вид на терминал на удаленном комьютере](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/logged_terminal.jpg)
 
 Получили доступ к терминалу.
 
