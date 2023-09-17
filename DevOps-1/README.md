@@ -32,7 +32,7 @@ service ssh start
 service ssh status
 ```
 
-![Проверка процесса]()
+![Проверка процесса](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/ssh_status.jpg)
 
 4. Получение ip адрессов машин в локальной сети.
 
