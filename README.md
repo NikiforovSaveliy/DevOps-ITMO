@@ -11,7 +11,7 @@
  <h2 align="center"> Список лабораторных работ </h2>
 
 * DevOps лабы
-    1. [Доступ по ssh (WIP)](https://github.com/NikiforovSaveliy/DevOps-ITMO/tree/main/DevOps-1)
+    1. [Доступ по ssh](https://github.com/NikiforovSaveliy/DevOps-ITMO/tree/main/DevOps-1)
 
 
  
