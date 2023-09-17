@@ -41,7 +41,7 @@ apt install net-tools && ifconfig
 ```
 Получили IP адресс машины в локальной сети.
 
-![Адресс в локальной сети](https://www.meme-arsenal.com/memes/947c8dbc72eb93f480e19b7ecf029c9e.jpg)
+![Адресс в локальной сети](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/ip_allocation.jpg)
 
 5.  Подключение к машине по ssh
 
@@ -95,7 +95,7 @@ scp {host_1}@{address_1}:{path_to file} {host_2}@{address_2}:{path_to_file}
     (pic after copy id)
 
 4. Повтор действий из пункта 7
-    пикчи тутююю 
+    пикчи тут
 </details>
 
 ----
