@@ -67,6 +67,7 @@ scp {host_1}@{address_1}:{path_to file} {host_2}@{address_2}:{path_to_file}
 ```
 
 Имеем данный вывод в терминал:
+
 ![terminal_exec](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/scp_success.jpg)
 
 8. Проверка наличия файлов.
