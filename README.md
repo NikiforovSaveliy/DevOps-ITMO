@@ -4,7 +4,7 @@
 
 <h2 align="center"> Состав комманды </h2>
 
- - [Никифоров Савелий](https://t.me/waswel) - MacOS enjoyer.
+- [Никифоров Савелий](https://t.me/waswel) - MacOS enjoyer.
 - [Иванова Анастасия](https://t.me/Crevetka960) - She use Arch btw.
 - [Ершов Николай](https://t.me/kropacek) - Любитель wsl.
 
