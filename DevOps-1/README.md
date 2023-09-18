@@ -12,7 +12,7 @@
 1. На комьютере A создадим текстовый файл.
 
 ```bash
- echo Hello world! >> file.txt
+ echo "Hello world!" >> file.txt
  ```
 
 2. Установка ssh сервера на машину.
@@ -20,6 +20,8 @@
 ```bash
     sudo apt update && apt install openssh-server -y
 ```
+
+![Установка сервера](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/install_server.jpg)
 
 3. Запуск ssh сервера.
 
@@ -65,13 +67,13 @@ scp {host_1}@{address_1}:{path_to file} {host_2}@{address_2}:{path_to_file}
 ```
 
 Имеем данный вывод в терминал:
-![terminal_exec]()
+![terminal_exec](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/scp_success.jpg)
 
 8. Проверка наличия файлов.
 
-(вставьте картинку, мне лень)
+![Success](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/check_file.jpg)
 
-
+Файл `test.txt` был успешно передан меджду двумя удаленными хостами
 <details>
 
 <summary> Вариант со звездочкой </summary>
@@ -85,17 +87,17 @@ scp {host_1}@{address_1}:{path_to file} {host_2}@{address_2}:{path_to_file}
     ```bash
     ssh-copy-id
     ```
-    pic here
+    ![ssh_copy_id](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/ssh_copy_id.jpg)
 
 3. Попробуем подключиться
     ```bash
     ssh {user}@{address}
     ```
     В итоге пароль для входа в систему не потребовался.
-    (pic after copy id)
+    ![enter_ssh_copy_id](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/enter_ssh_copy_id.jpg)
 
 4. Повтор действий из пункта 7
-    пикчи тут
+    ![p_7](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/p7_again.jpg)
 </details>
 
 ----
