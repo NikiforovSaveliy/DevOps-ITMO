@@ -94,7 +94,7 @@ scp {host_1}@{address_1}:{path_to file} {host_2}@{address_2}:{path_to_file}
     ssh {user}@{address}
     ```
     В итоге пароль для входа в систему не потребовался.
-    ![enter_ssh_copy_id](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/enter_ssh_copy_id.jpg)
+    ![enter_ssh_copy_id](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/ssh_enter_copy_id.jpg)
 
 4. Повтор действий из пункта 7
     ![p_7](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-1/p7_again.jpg)
