@@ -1,0 +1,17 @@
+# 1 anipattern - using generic layer from dockerhub w/o version
+FROM ubuntu
+
+WORKDIR /app
+
+# 2 antipattern - install packages insted of using python image
+RUN apt-get update
+RUN apt-get install python3-pip -y
+
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
+
+#Copy file by file (SORRY ITS ROFLS)
+COPY server.py .
+
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "server:app"]
