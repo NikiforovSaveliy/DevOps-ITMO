@@ -54,6 +54,27 @@ docker duild -f GoodDockerfile . -t good_docker
 docker run -p 80:80 {tag_of_container}
 ```
 
+<details>
+<summary> Вариант со звездочкой</summary>
+   1. Установка minikube (для MacOS)
+
+   ```bash
+      brew install minikube
+   ```
+
+   2. Запуск кластера 
+
+   ```bash
+   minikube start && minikube dashboard
+   ```
+
+   3. Пуш образа в репозиторий Dockerhub
+   
+   ```bash
+   docker push waswel/dev-ops-itmo:
+   ```
+
+</details>
 ---
 
 <h2 align="center">Вывод</h2>
