@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment # Selected type
+metadata:
+  name: flask-deployment # male deployment with name flask-deployment
+  labels:
+    app: flask # add label for deployment (now it's app label with flask)
+spec:
+  selector:
+    matchLabels:
+      app: flask # Deployment works only with pods which have flask label
+  template:
+    # describe template pods to run
+    metadata:
+      labels: # set app label
+        app: flask
+    spec:
+      containers: # describe running in pod containers
+        - name: flask-server
+          image: waswel/good_docker
+          ports:
+            - containerPort: 80 # link ports in container
