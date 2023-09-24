@@ -13,6 +13,6 @@
 * DevOps лабы
     1. [Доступ по ssh](https://github.com/NikiforovSaveliy/DevOps-ITMO/tree/main/DevOps-1)
     2. [Плохой и хороший Dockerfile (WIP)](https://github.com/NikiforovSaveliy/DevOps-ITMO/tree/main/DevOps-2)
-    3. [Организация CI/CD пайплайна (WIP)](https://github.com/NikiforovSaveliy/DevOps-ITMO/tree/main/DevOps-3)
+    3. [Организация CI/CD пайплайна (WIP)](https://github.com/NikiforovSaveliy/DEV-OPS-ITMO-lab-3/tree/main)
 
  
