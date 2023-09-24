@@ -11,7 +11,7 @@ COPY ./requirements.txt .
 
 RUN pip install -r requirements.txt
 
-#Copy file by file (SORRY ITS ROFLS)
-COPY server.py .
+#Copy whole project (w/o .dockerignore)
+COPY . .
 
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "server:app"]

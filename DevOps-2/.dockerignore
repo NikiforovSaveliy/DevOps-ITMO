@@ -1,0 +1,6 @@
+README.md
+Pictures/
+K8s/
+BadDockerfile
+GoodDockerfile
+.*

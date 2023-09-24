@@ -10,7 +10,7 @@ COPY ./requirements.txt requirements.txt
 # install requirements
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# copy whole project 
+# copy whole project (with .dockerignore)
 COPY . .
 
 # Run gunicorn server
