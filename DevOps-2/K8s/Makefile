@@ -10,3 +10,10 @@ apply-deploy:
 apply-service:
 	kubectl apply -f Service.yaml
 
+.PHONY: start
+start:
+	minikube start
+
+.PHONY: dashboard
+dashboard:
+	minikube dashboard
