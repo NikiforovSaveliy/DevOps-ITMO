@@ -25,6 +25,7 @@
 <h2 align="center">Выполнение работы</h2>
 
 <h3 align="center">Подготовка к написанию Dockerfile</h3>
+
 Сначала создадим папку с файлом `requirements.txt`, в котором запишем требуемые библиотеки Python.
 
 ![Файл 'requirements.txt'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/requirements.jpg)
@@ -59,7 +60,11 @@ docker run --name bad -p 80:80 -d bad_docker
 
 <h3 align="center">Хороший Dockerfile</h3>
 
-Для хорошего dockerfile уместно использовать образ Python, вместо образа ubuntu. Заменяем строчку `FROM ubuntu` на `FROM python:3.11-slim-bookworm` и теперь нам не нужно подключать `pip`, потому что образ Python в себе включает эту библиотеку. Далее с помощью команды `pip install` устанавливаем зависимости из `requirements.txt` внутри контейнера. Инструкция `COPY . .` копирует все файлы и папки из вашего локального контекста сборки в контейнер. Последнюю строчку не меняем. Собираем образ вот этой командой:
+Для хорошего dockerfile уместно использовать образ Python, вместо образа ubuntu. Заменяем строчку `FROM ubuntu` на `FROM python:3.11-slim-bookworm` и теперь нам не нужно подключать `pip`, потому что образ Python в себе включает эту библиотеку. Далее с помощью команды `pip install` устанавливаем зависимости из `requirements.txt` внутри контейнера. Инструкция `COPY . .` копирует все файлы и папки из вашего локального контекста сборки в контейнер. Последнюю строчку не меняем. В итоге получаем dockerfile с вот этим содержимым:
+
+![Вывод при билде хорошего dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/good_dockerfile.jpg)
+
+Собираем образ вот этой командой:
 
 ```bash
 docker build -f GoodDockerfile . -t good_docker
