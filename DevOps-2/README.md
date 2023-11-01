@@ -117,26 +117,19 @@ docker run --name good -p 80:80 -d good_docker
    <h2 align="center">Постановка задачи</h2>
 
    Запустить Kubernetes кластер (подойдёт minikube или kind). Запустить контейнеры внутри этого кластера, при этом всё должно быть описано кодом. В минимальном варианте должен быть deployment и service. Приложение, работающее внутри контейнера внутри кластера должно открываться локально в браузере.
-   
-   1. Установка minikube (для MacOS)
 
+   Для начала, установим minikube - инструмент, который позволяет нам запустить и управлять небольшим, локальным кластерам Kubernetes. Для этого воспользуемся данной командой (для MacOS):
+   
    ```bash
       brew install minikube
    ```
 
-   2. Запуск кластера 
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/setup_minikube.jpg"/>
+</p>
 
-   ```bash
-   minikube start && minikube dashboard
-   ```
-
-   3. Пуш образа в репозиторий Dockerhub
-   
-   ```bash
-   docker push waswel/dev-ops-itmo:
-   ```
 
 </details>
----
+
 
 
