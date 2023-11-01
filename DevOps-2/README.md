@@ -28,7 +28,11 @@
 
 Сначала создадим папку с файлом `requirements.txt`, в котором запишем требуемые библиотеки Python.
 
-![Файл 'requirements.txt'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/requirements.jpg)
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/requirements.jpg"/>
+</p>
+
 
 Далее добавим в эту директорию файл `server.py` с простым веб-приложением.
 
