@@ -25,37 +25,57 @@
 <h2 align="center">Выполнение работы</h2>
 
 <h3 align="center">Подготовка к написанию Dockerfile</h3>
-Сначала создадим папку с файлом 'requirements.txt', в котором запишем требуемые библиотеки Python.
+Сначала создадим папку с файлом `requirements.txt`, в котором запишем требуемые библиотеки Python.
 
 ![Файл 'requirements.txt'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/requirements.jpg)
 
-Далее добавим в эту директорию файл 'server.py' с простым веб-приложением.
+Далее добавим в эту директорию файл `server.py` с простым веб-приложением.
 
 ![Файл 'server.py'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/server_py.jpg)
 
 <h3 align="center">Плохой Dockerfile</h3>
 
-Напишем инструкции для плохого Dockerfile. Загружает базовый образ Ubuntu, устанавливаем Python3 и pip, копируем файл 'requirements.txt' из директории проекта в рабочую директорию '/app' внутри образа, устанавливаем необходимые зависимости Python, копируем все файлы из директории проекта внутрь образа и задаем команду для запуска контейнера.
+Напишем инструкции для плохого Dockerfile. Загружает базовый образ Ubuntu, устанавливаем Python3 и pip, копируем файл `requirements.txt` из директории проекта в рабочую директорию `/app` внутри образа, устанавливаем необходимые зависимости Python, копируем все файлы из директории проекта внутрь образа и задаем команду для запуска контейнера.
 
 ![Заполенение bad Dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/изображение_2023-11-01_181416451.png)
 
-Команда для сборки dockerfile:
+Команда для сборки плохого dockerfile:
 ```bash
-docker duild -f BadDockerfile . -t bad_docker
+docker build -f BadDockerfile . -t bad_docker
 ```
 
 Получаем:
 
 ![Вывод при билде плохого dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/build_docker.jpg)
 
-Комманда для запуска контейнеров
+Комманда для запуска плохого контейнера
 
 ```bash
-docker run -p 80:80 {tag_of_container}
+docker run --name bad -p 80:80 -d bad_docker
 ```
 Переходим на хосте по 0.0.0.0:80 и видим:
 
-![Вывод при билде плохого dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/hello_world_web.jpg)
+![Результат запуска плохого контейнера](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/hello_world_web.jpg)
+
+<h3 align="center">Хороший Dockerfile</h3>
+
+Для хорошего dockerfile уместно использовать образ Python, вместо образа ubuntu. Заменяем строчку `FROM ubuntu` на `FROM python:3.11-slim-bookworm` и теперь нам не нужно подключать `pip`, потому что образ Python в себе включает эту библиотеку. Далее с помощью команды `pip install` устанавливаем зависимости из `requirements.txt` внутри контейнера. Инструкция `COPY . .` копирует все файлы и папки из вашего локального контекста сборки в контейнер. Последнюю строчку не меняем. Собираем образ вот этой командой:
+
+```bash
+docker build -f GoodDockerfile . -t good_docker
+```
+
+![Вывод при билде хорошего dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/build_good_docker.jpg)
+
+Запускаем контейнер этой командой:
+
+```bash
+docker run --name good -p 80:80 -d good_docker
+```
+
+И видим следующий результат:
+
+![Результат запуска хорошего контейнера](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/hello_world_web.jpg)
 
 <details>
 <summary> Вариант со звездочкой</summary>
