@@ -44,9 +44,9 @@
 
 Напишем инструкции для плохого Dockerfile. Загружает базовый образ Ubuntu, устанавливаем Python3 и pip, копируем файл `requirements.txt` из директории проекта в рабочую директорию `/app` внутри образа, устанавливаем необходимые зависимости Python, копируем все файлы из директории проекта внутрь образа и задаем команду для запуска контейнера.
 
-<p align="center">
-  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/изображение_2023-11-01_181416451.png"/>
-</p>
+
+<img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/изображение_2023-11-01_181416451.png"/>
+
 
 Команда для сборки плохого dockerfile:
 ```bash
