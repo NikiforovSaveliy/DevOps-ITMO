@@ -24,26 +24,43 @@
 
 <h2 align="center">Выполнение работы</h2>
 
+<h3 align="center">Подготовка к написанию Dockerfile</h3>
+Сначала создадим папку с файлом 'requirements.txt', в котором запишем требуемые библиотеки Python.
+
+![Файл 'requirements.txt'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/requirements.jpg)
+
+Далее добавим в эту директорию файл 'server.py' с простым веб-приложением.
+
+![Файл 'server.py'](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/server_py.jpg)
+
 <h3 align="center">Плохой Dockerfile</h3>
 
-<h3 align="center">Создание образа и запуск контейнера</h3>
+Напишем инструкции для плохого Dockerfile. Загружает базовый образ Ubuntu, устанавливаем Python3 и pip, копируем файл 'requirements.txt' из директории проекта в рабочую директорию '/app' внутри образа, устанавливаем необходимые зависимости Python, копируем все файлы из директории проекта внутрь образа и задаем команду для запуска контейнера.
 
-Комманда для сборки хорошего и плохого образа
+![Заполенение bad Dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/изображение_2023-11-01_181416451.png)
+
+Команда для сборки dockerfile:
 ```bash
 docker duild -f BadDockerfile . -t bad_docker
 ```
-```bash
-docker duild -f GoodDockerfile . -t good_docker
-```
+
+Получаем:
+
+![Вывод при билде плохого dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/build_docker.jpg)
 
 Комманда для запуска контейнеров
 
 ```bash
 docker run -p 80:80 {tag_of_container}
 ```
+Переходим на хосте по 0.0.0.0:80 и видим:
+
+![Вывод при билде плохого dockerfile](https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/hello_world_web.jpg)
 
 <details>
 <summary> Вариант со звездочкой</summary>
+   
+   
    1. Установка minikube (для MacOS)
 
    ```bash
