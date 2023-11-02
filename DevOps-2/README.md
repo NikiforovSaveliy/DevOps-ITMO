@@ -134,8 +134,9 @@ docker run --name good -p 80:80 -d good_docker
 
 Далее, выполняем эти команды, чтобы исполняемы файл Minikube был доступен из любой директории:
 
-    ```sudo mkdir -p /usr/local/bin/
-       sudo install minikube /usr/local/bin/
+    ```bash
+    sudo mkdir -p /usr/local/bin/
+    sudo install minikube /usr/local/bin/
     ```
 Запустим Minikube вот этой командой `minikube start --vm-driver=<docker>`. Здесь мы использовали драйвер docker для виртуализации. После выполнения этой команды сможем работать с Kubernetes, не создавая полноценный удаленный кластер Kubernetes. Проверим, что все работает командой `minikube status`:
 
@@ -145,9 +146,10 @@ docker run --name good -p 80:80 -d good_docker
 
 Теперт установим kubectl. Для этого последовательно выполним следующие команды:
 
-   ```curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
-      chmod +x ./kubectl
-      sudo mv ./kubectl /usr/local/bin/kubectl
+   ```bash
+   curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
+   chmod +x ./kubectl
+   sudo mv ./kubectl /usr/local/bin/kubectl
    ```
 
 Убеждаемся, что все правильно установили, вводя команду `kubectl version --client`:
