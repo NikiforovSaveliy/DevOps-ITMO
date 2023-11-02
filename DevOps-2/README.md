@@ -118,16 +118,97 @@ docker run --name good -p 80:80 -d good_docker
 
    Запустить Kubernetes кластер (подойдёт minikube или kind). Запустить контейнеры внутри этого кластера, при этом всё должно быть описано кодом. В минимальном варианте должен быть deployment и service. Приложение, работающее внутри контейнера внутри кластера должно открываться локально в браузере.
 
-   Для начала, установим minikube - инструмент, который позволяет нам запустить и управлять небольшим, локальным кластерам Kubernetes. Для этого воспользуемся данной командой (для MacOS):
+<h2 align="center">Выполнение работы</h2>
+
+<h3 align="center">Установка инструментов</h3>
+
+   Для начала, установим minikube - инструмент, который позволяет нам запустить и управлять небольшим, локальным кластерам Kubernetes. Для этого воспользуемся данной командой:
    
    ```bash
-      brew install minikube
+      curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
    ```
 
 <p align="center">
   <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/setup_minikube.jpg"/>
 </p>
 
+Далее, выполняем эти команды, чтобы исполняемы файл Minikube был доступен из любой директории:
+
+    ```sudo mkdir -p /usr/local/bin/
+       sudo install minikube /usr/local/bin/
+   ```
+Запустим Minikube вот этой командой `minikube start --vm-driver=<docker>`. Здесь мы использовали драйвер docker для виртуализации. После выполнения этой команды сможем работать с Kubernetes, не создавая полноценный удаленный кластер Kubernetes. Проверим, что все работает командой `minikube status`:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/minikube_status.jpg"/>
+</p>
+
+Теперт установим kubectl. Для этого последовательно выполним следующие команды:
+
+   ```curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
+      chmod +x ./kubectl
+      sudo mv ./kubectl /usr/local/bin/kubectl
+   ```
+
+Убеждаемся, что все правильно установили, вводя команду `kubectl version --client`:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/kubectl_version.jpg"/>
+</p>
+
+
+<h3 align="center">Создание и настройка Deployment и Service</h3>
+
+Создадим файл `Deployment.yaml` и наполним его следующим:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/deployment_inside.jpg"/>
+</p>
+
+Разберем этот файл подробнее. Мы создаем объект развертывания, поэтому поле `apiVersion` установлен на `apps/v1` - версия `API Kubernetes`, и `kind` установлен на `Deployment`. В разделе `metadata` содежится имя развертывания - `flask-deployment` и добавлена метка `app`. 
+В разделе `spec` описываются настройки для развертывания, а именно: 
+   1. `selector`, который указывает, что будет контролироваться под с меткой `app: flask`.
+   2. `template`, где определено описание пода
+   3. `containers` - здесь определен контейнер с именем `flask-server`, который будет создан из образа `waswel/good_docker`.
+
+Чтобы получить доступ к поду, необходимо написать еще один файл - `Service.yaml`:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/system_inside.jpg"/>
+</p>
+
+
+Этот файл конфигурации описывает сервис с именем `flask-service`, который будет доступен снаружи кластера через порт 80, и все входящие запросы на этот порт будут перенаправляться на поды, помеченные как `app: flask` на их порт 80, где, работает flask-приложение.
+
+Теперь создадим `Makefile.txt`, с помощью которого автоматизируем и упростим процесс работы с minikube. Его содержимое представлено ниже:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/makefile_inside.jpg"/>
+</p>
+
+
+В данном Makefile есть несколько целей, каждая из которых выполняет определенное действие:
+
+1. `run`: Запускает сервис, который развернут в кластере Minikube. Он использует команду `minikube service flask-service` для открытия сервиса в браузере.
+2. `apply-deploy`: Применяет конфигурацию развертывания из файла `Deployment.yaml` в кластере с помощью команды `kubectl apply`.
+3. `apply-service`: Применяет конфигурацию службы из файла `Service.yaml` в кластере с помощью команды `kubectl apply`.
+4. `start`: Запускает локальный кластер Minikube с помощью команды `minikube start`.
+5. `dashboard`: Запускает веб-интерфейс Kubernetes Dashboard для управления и мониторинга кластера Minikube с помощью команды `minikube dashboard`.
+
+<h3 align="center">Результат</h3>
+
+Использовав команду `make apply-deploy`, мы применим Deployment. Далее пишем `make apply-service` и применяем Service. Теперь подключаемся к сервису flask-service используя следующий синтаксис: `make run`:
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/run_port_forwarding.png"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/NikiforovSaveliy/DevOps-ITMO/blob/main/DevOps-2/Pictures/result.jpg"/>
+</p>
+
+
+Все работает.
 
 </details>
 
