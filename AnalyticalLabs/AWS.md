@@ -75,7 +75,7 @@ Amazon transcribe - Yandex SpeechKit
 
 Amazon CloudHSM - Yandex Key Management Service
 
-AWS CodeBuild - Yandex Cloud Functions (не совсем, то позволяет запустить код в безопасном окружении)
+AWS CodeBuild - Yandex Managed Service for GitLab
 
 Amazon Comprehend - Yandex SpeechSense (нет извлечения сущностей предоставленном в формате json)
 
