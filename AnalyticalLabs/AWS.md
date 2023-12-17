@@ -60,7 +60,7 @@ AmazonEC2 - Yandex Compute Сloud (имеет настройки машин и �
 
 Amazon DynamoDb - Yandex Managed Service for Redis
 
-AWS Database Migration Svc - Data Transfer (нет решения проблем со сбоями хостов) 
+AWS Database Migration Svc - Yandex Data Transfer (нет решения проблем со сбоями хостов) 
 
 Iot Device Management - Yandex IoT Core
 
