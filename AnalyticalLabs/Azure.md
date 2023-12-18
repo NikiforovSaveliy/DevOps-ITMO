@@ -14,7 +14,7 @@
 ### Описание сервисов
 Ниже будут описанные сервисы из условия
 
-**Data Management** - это платформа дял управления, хранения, защиты, обработки и анализа и использования данных. Например, Azure Data Manager for Energy помогает энергетическим компаниям получать полезные аналитические сведения, повышать производительность работы и быстрее выпускать решения на рынок. Сервис использует облачную платформу данных OSDU.
+**Data Management** - это платформа для управления, хранения, защиты, обработки и анализа и использования данных. Например, Azure Data Manager for Energy помогает энергетическим компаниям получать полезные аналитические сведения, повышать производительность работы и быстрее выпускать решения на рынок. Сервис использует облачную платформу данных OSDU.
 
 **Machine Learning Studio** - это облачный wed-сервис разработки, позволяющей построение и использование сложных моделей машинного обучения в наглядной форме.
 
@@ -53,6 +53,18 @@ Virtual Machines - Yandex Compute Cloud
 На другие, не перечисленные сервисы аналогов нет.
 
 ### Таблица
+
+| Type                              | Azure                      | Yandex Cloud                      |
+|-----------------------------------|----------------------------|-----------------------------------|
+| Virtual machines and servers      | Virtual Machines           | Yandex Compute Сloud              |
+| Analysis for Hybrid storage or DB | Data Management            |                                   |
+| Dev. ML                           | Machine Learning Studio    | Yandex Managed Service for Redis  |
+| Save connection to VM             | Azure Bastion              | Yandex Virtual Private Cloud      |
+| Web applications                  | API Management             |                                   |
+| Management and governance         | Azure Monitor              | Yandex Monitoring                 |
+| ML analysis Data                  | Business Analytics         | Yandex DataLens                   |
+| Licensing                         | Virtual Machines Licenses  |                                   |
+| Archiving and backup              | AWS Backup                 | Yandex Cloud Backup               |
 
 ### Вывод
 В ходе выполнения данной работы мы ознакомились с облачными сервисами от Amazon.
