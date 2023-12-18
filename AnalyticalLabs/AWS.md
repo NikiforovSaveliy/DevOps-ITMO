@@ -54,7 +54,7 @@ DynamoDb автоматически распределяет данные, дл�
 Amazon Comprehend предоставляет API для распознавания сущностей, в том числе, пользовательской классификации, извлечения ключевых фраз, анализа эмоциональной окраски и так далее.
 Это позволяет встраивать механизмы обработки естественного языка в приложения. Сущности будут представленные в итоге в формате JSON.
 
-**Amazon Compreged medical** - это сервис обработки естественного языка (NLP), который использует машинное обучение,
+**Amazon Comprehend medical** - это сервис обработки естественного языка (NLP), который использует машинное обучение,
 предварительно обученное для понимания и извлечения данных о здоровье из медицинского текста, например рецептов, процедур или диагнозов.
 
 **AWS Backup** - это полностью управляемый сервис, который централизует и автоматизирует сервисы защиты данных AWS, такие как Amazon S3, Amazon FSx, Amazon EC2 и RDS,
@@ -88,7 +88,22 @@ AWS Backup - Yandex Cloud Backup
 
 ### Таблица
 
-|
+| Type                          | AWS                        | Yandex Cloud                      |
+|-------------------------------|----------------------------------------------------------------|
+| Virtual machines and servers  | AmazonEC2                  | Yandex Compute Сloud              |
+| Caching for DynamoDB          | AmazonDAX                  |                                   |
+| NoSQL                         | AmazonDynamoDB             | Yandex Managed Service for Redis  |
+| Database migration            | AWS Database Migration Svc | Yandex Data Transfer              |
+| Iot Management and governance | Iot Device Management      | Yandex IoT Core                   |
+| Mobile services               | AWS Device Farm            |                                   |
+| Partner programm              | APNFee                     | Yandex Cloud (Professionals)      |
+| ML translate                  | Amazon translate           | Yandex Translate                  |
+| ML transcribe                 | Amazon transcribe          | Yandex SpeechKit                  |
+| Security and Encryption       | Amazon CloudHSM            | Yandex Key Management Service     |
+| DevOps                        | AWS CodeBuild              | Yandex Managed Service for GitLab |
+| ML analysis NLP               | Amazon Comprehend          | Yandex SpeechSense                |
+| ML analysis NLP (medical)     | Amazon Comprehend medical  |                                   |
+| Archiving and backup          | AWS Backup                 | Yandex Cloud Backup               |
 
 ### Вывод
 В ходе выполнения данной работы мы ознакомились с облачными сервисами от Amazon.
