@@ -89,7 +89,7 @@ AWS Backup - Yandex Cloud Backup
 ### Таблица
 
 | Type                          | AWS                        | Yandex Cloud                      |
-|-------------------------------|----------------------------------------------------------------|
+|-------------------------------|----------------------------|-----------------------------------|
 | Virtual machines and servers  | AmazonEC2                  | Yandex Compute Сloud              |
 | Caching for DynamoDB          | AmazonDAX                  |                                   |
 | NoSQL                         | AmazonDynamoDB             | Yandex Managed Service for Redis  |
@@ -104,6 +104,7 @@ AWS Backup - Yandex Cloud Backup
 | ML analysis NLP               | Amazon Comprehend          | Yandex SpeechSense                |
 | ML analysis NLP (medical)     | Amazon Comprehend medical  |                                   |
 | Archiving and backup          | AWS Backup                 | Yandex Cloud Backup               |
+
 
 ### Вывод
 В ходе выполнения данной работы мы ознакомились с облачными сервисами от Amazon.
