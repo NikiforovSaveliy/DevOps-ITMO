@@ -50,6 +50,8 @@ Business Analytics - Yandex DataLens
 
 Virtual Machines - Yandex Compute Cloud
 
+Management and Analysis for Api - Yandex API Gateway (не совсем то, что указано. Однако позволяет управлять соединениями)
+
 На другие, не перечисленные сервисы аналогов нет.
 
 ### Таблица
@@ -65,6 +67,7 @@ Virtual Machines - Yandex Compute Cloud
 | ML analysis Data                  | Business Analytics         | Yandex DataLens                   |
 | Licensing                         | Virtual Machines Licenses  |                                   |
 | Archiving and backup              | AWS Backup                 | Yandex Cloud Backup               |
+| Management and Analysis for API   | API Management             | Yandex API Gateway                |
 
 ### Вывод
 В ходе выполнения данной работы мы ознакомились с облачными сервисами от Amazon.
